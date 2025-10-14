@@ -67,5 +67,33 @@ function showNotification(message, type = 'info') {
     }, 3000);
 }
 
+// === Filtrage des cartes de mods ===
+
+document.addEventListener("DOMContentLoaded", () => {
+  const search = document.getElementById("mods-search");
+  const filter = document.getElementById("mods-filter");
+  const cards = [...document.querySelectorAll(".mod-card")];
+
+  function applyFilter() {
+    const q = (search.value || "").toLowerCase();
+    const cat = filter.value.toLowerCase();
+    cards.forEach((c) => {
+      const title = c.querySelector(".mod-title").textContent.toLowerCase();
+      const desc = (c.querySelector(".mod-desc")?.textContent || "").toLowerCase();
+      const tags = (c.dataset.tags || "").toLowerCase();
+
+      const matchText = title.includes(q) || desc.includes(q) || tags.includes(q);
+      const matchCat = !cat || tags.includes(cat);
+      c.style.display = matchText && matchCat ? "" : "none";
+    });
+  }
+
+  if (search && filter) {
+    search.addEventListener("input", applyFilter);
+    filter.addEventListener("change", applyFilter);
+  }
+});
+
+
 // Export functions if using modules
 // export { validateEmail, showNotification };
