@@ -4,96 +4,101 @@
  * Description: Handles UI interactions and core logic
  */
 
-// Wait for DOM to load
 document.addEventListener('DOMContentLoaded', () => {
-    // Example: Navigation toggle
-    const navToggle = document.getElementById('nav-toggle');
-    const navMenu = document.getElementById('nav-menu');
-    if (navToggle && navMenu) {
-        navToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
-    }
-
-    // Example: Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const targetId = this.getAttribute('href').substring(1);
-            const target = document.getElementById(targetId);
-            if (target) {
-                e.preventDefault();
-                target.scrollIntoView({ behavior: 'smooth' });
-            }
-        });
+  /* ========== MENU MOBILE (burger) ========== */
+  const btn = document.querySelector('.menu-btn');
+  const menu = document.getElementById('main-menu');
+  if (btn && menu) {
+    btn.addEventListener('click', () => {
+      const opened = menu.classList.toggle('active'); // .menu.active est stylé dans ton CSS
+      btn.setAttribute('aria-expanded', opened ? 'true' : 'false');
     });
+    // Ferme après clic sur un lien
+    menu.querySelectorAll('a').forEach(a =>
+      a.addEventListener('click', () => {
+        menu.classList.remove('active');
+        btn.setAttribute('aria-expanded', 'false');
+      })
+    );
+    // Ferme si clic hors menu
+    document.addEventListener('click', (e) => {
+      if (!menu.contains(e.target) && e.target !== btn) {
+        menu.classList.remove('active');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
 
-    // Example: Form validation
-    const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function (e) {
-            let valid = true;
-            const email = this.querySelector('input[type="email"]');
-            if (email && !validateEmail(email.value)) {
-                valid = false;
-                email.classList.add('error');
-            } else if (email) {
-                email.classList.remove('error');
-            }
-            if (!valid) {
-                e.preventDefault();
-            }
-        });
-    }
+  /* ========== Smooth scroll pour ancres internes ========== */
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', (e) => {
+      const id = anchor.getAttribute('href').slice(1);
+      const target = document.getElementById(id);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+
+  /* ========== Validation basique d’un éventuel formulaire ========== */
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      let valid = true;
+      const email = contactForm.querySelector('input[type="email"]');
+      if (email && !validateEmail(email.value)) {
+        valid = false;
+        email.classList.add('error');
+      } else if (email) {
+        email.classList.remove('error');
+      }
+      if (!valid) e.preventDefault();
+    });
+  }
+
+  /* ========== Filtrage des MODS (compatible .mod-card-modern) ========== */
+  const search = document.getElementById('mods-search');
+  const filter = document.getElementById('mods-filter');
+  const cards = Array.from(document.querySelectorAll('.mod-card-modern'));
+
+  function applyModsFilter() {
+    const q = (search?.value || '').toLowerCase();
+    const cat = (filter?.value || '').toLowerCase();
+
+    cards.forEach(card => {
+      const title = (card.querySelector('h2')?.textContent || '').toLowerCase();
+      const desc  = (card.querySelector('p')?.textContent || '').toLowerCase();
+      const tags  = (card.dataset.tags || '').toLowerCase(); // optionnel : <div data-tags="qol dinos">
+      const matchText = !q || title.includes(q) || desc.includes(q) || tags.includes(q);
+      const matchCat  = !cat || tags.includes(cat);
+      card.style.display = (matchText && matchCat) ? '' : 'none';
+    });
+  }
+
+  if (search) search.addEventListener('input', applyModsFilter);
+  if (filter) filter.addEventListener('change', applyModsFilter);
 });
 
-/**
- * Validate email format
- * @param {string} email
- * @returns {boolean}
- */
+/* ---------- Utils ---------- */
 function validateEmail(email) {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(email);
+  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return re.test(email);
 }
 
-// Example: Utility function to show notifications
+// Petite notif simple
 function showNotification(message, type = 'info') {
-    const notif = document.createElement('div');
-    notif.className = `notification ${type}`;
-    notif.textContent = message;
-    document.body.appendChild(notif);
-    setTimeout(() => {
-        notif.remove();
-    }, 3000);
+  const notif = document.createElement('div');
+  notif.className = `notification ${type}`;
+  notif.textContent = message;
+  Object.assign(notif.style, {
+    position: 'fixed', bottom: '20px', right: '20px',
+    background: '#11151f', color: '#e6edf3',
+    border: '1px solid rgba(255,255,255,.08)', borderRadius: '10px',
+    padding: '10px 14px', boxShadow: '0 10px 24px rgba(0,0,0,.4)', zIndex: 9999
+  });
+  document.body.appendChild(notif);
+  setTimeout(() => notif.remove(), 3000);
 }
 
-// === Filtrage des cartes de mods ===
-
-document.addEventListener("DOMContentLoaded", () => {
-  const search = document.getElementById("mods-search");
-  const filter = document.getElementById("mods-filter");
-  const cards = [...document.querySelectorAll(".mod-card")];
-
-  function applyFilter() {
-    const q = (search.value || "").toLowerCase();
-    const cat = filter.value.toLowerCase();
-    cards.forEach((c) => {
-      const title = c.querySelector(".mod-title").textContent.toLowerCase();
-      const desc = (c.querySelector(".mod-desc")?.textContent || "").toLowerCase();
-      const tags = (c.dataset.tags || "").toLowerCase();
-
-      const matchText = title.includes(q) || desc.includes(q) || tags.includes(q);
-      const matchCat = !cat || tags.includes(cat);
-      c.style.display = matchText && matchCat ? "" : "none";
-    });
-  }
-
-  if (search && filter) {
-    search.addEventListener("input", applyFilter);
-    filter.addEventListener("change", applyFilter);
-  }
-});
-
-
-// Export functions if using modules
 // export { validateEmail, showNotification };
