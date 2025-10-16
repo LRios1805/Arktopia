@@ -1,0 +1,25 @@
+# Mémo des commandes utiles
+
+## updates site
+./deploy.sh # Met à jour le site web
+
+## Navigation
+cd <dossier>           # Aller dans un dossier
+ls                     # Lister les fichiers/dossiers
+pwd                    # Afficher le chemin courant
+
+## Git
+git status             # Voir l'état du dépôt
+git add <fichier>      # Ajouter un fichier à l'index
+git commit -m "msg"    # Valider les changements
+git push               # Envoyer les changements
+
+## Python
+python script.py       # Lancer un script Python
+pip install <package>  # Installer un package Python
+
+## Divers
+code .                 # Ouvrir le dossier courant dans VS Code
+clear                  # Nettoyer le terminal
+
+# Ajoute ici tes commandes préférées !
