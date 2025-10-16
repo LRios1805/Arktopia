@@ -138,6 +138,24 @@ nav {
     color: #2dfc04;
 }
 
+
+.donate-btn {
+  display: inline;
+  background: rgba(34, 211, 238, 0.08);
+  color: var(--primary);
+  font-weight: 600
+  padding: 1px 5px;
+  border-radius: 4px;
+  border: none;
+  box-shadow: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.donate-btn:hover {
+  background: rgba(34, 211, 238, 0.15);
+  color: white;
+}
+
+
 /* --------- Bouton Discord --------- */
 .discord-btn {
   display: inline;
