@@ -142,8 +142,8 @@ nav {
 .discord-btn {
     display: inline-block;
     padding: 6px 8px;
-    border-radius: 10px;
-    border: 1px solid var(--border);
+    border-radius: 5px;
+    border: 1px solid var(--border); 
     background: rgba(34, 211, 238, 0.12); /* léger cyan transparent */
     color: #e6fbff;
     font-weight: 600;
