@@ -138,6 +138,19 @@ nav {
     color: #2dfc04;
 }
 
+/* --------- Bouton Discord --------- */
+.discord-btn
+{
+    display: inline-block;
+    background: var(--primary);
+    color: #0f172a;
+    font-weight: 600;
+    padding: 10px 16px;
+    border-radius: 8px;
+    box-shadow: 0 6px 22px var(--shadow);
+    transition: background .2s, box-shadow .2s;
+}
+
 /* --------- Hero (zone avec image) --------- */
 .hero {
     position: relative;
