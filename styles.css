@@ -150,6 +150,12 @@ nav {
     box-shadow: 0 6px 22px var(--shadow);
     transition: background .2s, box-shadow .2s;
 }
+.discord-btn:hover {
+    background: var(--primary-2);
+    box-shadow: 0 8px 26px rgba(0,0,0,.6);
+    color: white;
+}
+
 
 /* --------- Hero (zone avec image) --------- */
 .hero {
