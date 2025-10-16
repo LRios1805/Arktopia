@@ -116,8 +116,8 @@ nav {
 
 /* --------- Bouton burger (injecté par script.js) --------- */
 .menu-btn {
-    display: none;            /* affiché en mobile via @media */
-    font-size: 1.5rem;          /* taille du symbole ☰ */
+    display: none;
+    font-size: 2rem;          /* taille du symbole ☰ */
     line-height: 1;
     padding-left: 10px;
     background: none;
@@ -125,17 +125,17 @@ nav {
     cursor: pointer;
     user-select: none;
     transition: color .3s ease;
-    color: #0f75e9;           /* couleur par défaut */
+    color: #0f75e9;           /* couleur du symbole ☰ */
 }
 
 /* Au survol */
 .menu-btn:hover {
-    color: #00bcd4;
+    color: #0f75e9;   
 }
 
-/* Quand le menu est ouvert (ton HTML a déjà aria-expanded) */
+/* couleur du symbole ☰ ouvert */
 .menu-btn[aria-expanded="true"] {
-    color: #34d399;
+    color: #2dfc04;
 }
 
 /* --------- Hero (zone avec image) --------- */
@@ -363,8 +363,6 @@ footer {
 
 /* ===== MODS (grille moderne, basé sur tes variables) ===== */
 
-/* Corrige le fond du hero: tu utilises <body class="mods-page">
-   mais ton CSS cible .page-mods .hero — on ajoute un alias */
 .mods-page .hero {
   background-image: url("assets/bg-mods.jpg");
 }
@@ -475,7 +473,7 @@ footer {
   opacity: .55;
 }
 
-/* Effet “pulse doux” sur l’icône au hover (si animations OK) */
+/* Effet “pulse doux” sur l’icône au hover */
 @media (prefers-reduced-motion: no-preference) {
   .mod-card-modern:hover .mod-icon img { 
     transform: scale(1.03);
@@ -493,7 +491,7 @@ footer {
   .mod-icon img { width: 38px; height: 38px; }
 }
 
-/* --- Ajustement affichage cartes mods (sans images) --- */
+/* --- Ajustement affichage cartes mods --- */
 .mod-card-modern {
   display: flex;
   flex-direction: column;
