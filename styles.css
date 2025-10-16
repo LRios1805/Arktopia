@@ -144,8 +144,8 @@ nav {
     background: rgba(34, 211, 238, 0.12);
     color: var(--primary);
     font-weight: 600;
-    padding: 3px 8px;         /* 🔹 réduit le fond */
-    border-radius: 6px;
+    padding: auto;      /* 🔹 réduit le fond */
+    border-radius: 3px;
     border: 1px solid rgba(34, 211, 238, 0.25);
     box-shadow: none;
     transition: all 0.2s ease;
