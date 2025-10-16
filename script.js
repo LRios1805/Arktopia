@@ -10,9 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const menu = document.getElementById('main-menu');
   if (btn && menu) {
     btn.addEventListener('click', () => {
-      const opened = menu.classList.toggle('active'); // .menu.active est stylé dans ton CSS
+      const opened = menu.classList.toggle('active'); // .menu.active est stylé dans le CSS
       btn.setAttribute('aria-expanded', opened ? 'true' : 'false');
     });
+
     // Ferme après clic sur un lien
     menu.querySelectorAll('a').forEach(a =>
       a.addEventListener('click', () => {
@@ -20,14 +21,38 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.setAttribute('aria-expanded', 'false');
       })
     );
-    // Ferme si clic hors menu
+
+    // Ferme si clic hors menu (protège aussi le bouton)
     document.addEventListener('click', (e) => {
-      if (!menu.contains(e.target) && e.target !== btn) {
+      const clickInsideMenu = menu.contains(e.target);
+      const clickOnButton = btn.contains(e.target);
+      if (!clickInsideMenu && !clickOnButton) {
         menu.classList.remove('active');
         btn.setAttribute('aria-expanded', 'false');
       }
     });
   }
+
+  /* ========== Lien actif dans la nav ========== */
+  // ⚠️ Retire toute classe "active" en dur dans l'HTML : le JS gère tout.
+  const navLinks = document.querySelectorAll('nav a[href]:not([href^="#"])');
+
+  (function setActiveNav() {
+    // Détermine la page courante (ex: "faq.html" ou "index.html")
+    const currentPage = (() => {
+      const last = window.location.pathname.split('/').pop();
+      // Si l’URL se termine par un /, on considère index.html
+      return (last && last !== '/') ? last.toLowerCase() : 'index.html';
+    })();
+
+    navLinks.forEach(a => {
+      // Normalise la cible du lien (gère sous-dossiers/dev server)
+      const target = new URL(a.getAttribute('href'), window.location.origin);
+      const linkPage = (target.pathname.split('/').pop() || 'index.html').toLowerCase();
+
+      a.classList.toggle('active', linkPage === currentPage);
+    });
+  })();
 
   /* ========== Smooth scroll pour ancres internes ========== */
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
