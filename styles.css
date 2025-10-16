@@ -140,32 +140,23 @@ nav {
 
 /* --------- Bouton Discord --------- */
 .discord-btn {
-    display: inline-block;
-    padding: 6px 14px; /* 🔸 réduit l’épaisseur */
-    border-radius: 6px; /* 🔸 coins arrondis */
-    border: 1px solid var(--border);
-    background: rgba(34, 211, 238, 0.08); 
-    color: #e6fbff;
+    display: inline;
+    background: rgba(34, 211, 238, 0.12);
+    color: var(--primary);
     font-weight: 600;
-    font-size: 0.95rem; /* 🔸 légèrement plus petit */
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35); /* 🔸 ombre */
-    transition: all 0.25s ease;
-    cursor: pointer;
+    padding: 3px 8px;         /* 🔹 réduit le fond */
+    border-radius: 6px;
+    border: 1px solid rgba(34, 211, 238, 0.25);
+    box-shadow: none;
+    transition: all 0.2s ease;
 }
 
 .discord-btn:hover {
-    background: rgba(34, 211, 238, 0.15);
+    background: rgba(34, 211, 238, 0.25);
     color: white;
-    border-color: rgba(34, 211, 238, 0.35);
-    box-shadow: 0 4px 12px rgba(34, 211, 238, 0.12);
-    transform: translateY(-1px);
+    border-color: rgba(34, 211, 238, 0.4);
 }
 
-.discord-btn:active {
-    transform: translateY(0);
-    box-shadow: 0 2px 6px rgba(34, 211, 238, 0.1);
-}
 
 
 
