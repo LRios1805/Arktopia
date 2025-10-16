@@ -114,18 +114,28 @@ nav {
     background: rgba(34, 211, 238, .12);
 }
 
-/* Burger (injecté par script.js) */
+/* --------- Bouton burger (injecté par script.js) --------- */
 .menu-btn {
-    display: none;
-    font-size: 1.8rem;
-    cursor: pointer;
-    user-select: none;
-}
-
-.menu-btn {
-    color: #134dee;
+    display: none;            /* affiché en mobile via @media */
+    font-size: 1.5rem;          /* taille du symbole ☰ */
     line-height: 1;
     padding-left: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    user-select: none;
+    transition: color .3s ease;
+    color: #0f75e9;           /* couleur par défaut */
+}
+
+/* Au survol */
+.menu-btn:hover {
+    color: #00bcd4;
+}
+
+/* Quand le menu est ouvert (ton HTML a déjà aria-expanded) */
+.menu-btn[aria-expanded="true"] {
+    color: #34d399;
 }
 
 /* --------- Hero (zone avec image) --------- */
@@ -168,23 +178,6 @@ nav {
 }
 
 /* Bouton principal */
-.btn {
-    display: inline-block;
-    margin-top: 22px;
-    padding: 12px 22px;
-    border-radius: 10px;
-    font-weight: 700;
-    background: var(--primary);
-    color: #07121a;
-    box-shadow: 0 10px 30px rgba(34, 211, 238, .25);
-    transition: transform .15s, box-shadow .15s, background .15s;
-}
-
-.btn:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 14px 34px rgba(34, 211, 238, .33);
-}
-
 .btn:active {
     transform: translateY(0);
 }
@@ -330,7 +323,7 @@ footer {
     }
 
     .menu-btn {
-        display: block;
+        display: block;  /* le burger s’affiche en mobile */
     }
 
     .hero {
