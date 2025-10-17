@@ -4,58 +4,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arktopia - Serveur Ark: Survival Ascended</title>
+  <title>Arktopia - Serveur Ark Ascended</title>
+  <link rel="stylesheet" href="styles.css">
 
-  <!-- ========== MÉTADONNÉES SEO ========== -->
-  <meta name="description"
-    content="Arktopia — serveur francophone Ark: Survival Ascended. Rejoignez une communauté conviviale, des mods utiles et une aventure unique sur Ark Ascended.">
-  <link rel="canonical" href="https://lrios1805.github.io/Arktopia/">
-  <meta name="robots" content="index, follow">
-
-  <!-- Favicon -->
-  <link rel="icon" href="https://lrios1805.github.io/Arktopia/assets/logo/Arktopia_logo_sans_fond.png" type="image/png">
-
-  <!-- ========== OPEN GRAPH (Discord, Facebook...) ========== -->
+  <!-- ========== META DISCORD / SOCIAL PREVIEW ========== -->
   <meta property="og:title" content="Arktopia - Serveur Ark: Survival Ascended">
   <meta property="og:description"
     content="Rejoins Arktopia — un serveur francophone Ark: Survival Ascended ! Une aventure unique, une communauté soudée et des mods triés sur le volet.">
-  <!-- Conseil: remplace par une bannière 1200x630 dédiée si dispo -->
   <meta property="og:image" content="https://lrios1805.github.io/Arktopia/assets/logo/Arktopia_logo_sans_fond.png">
   <meta property="og:url" content="https://lrios1805.github.io/Arktopia/">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Arktopia">
   <meta name="theme-color" content="#22d3ee">
+  <!-- ==================================================== -->
 
-  <!-- ========== TWITTER CARDS (X / Twitter) ========== -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Arktopia - Serveur Ark: Survival Ascended">
-  <meta name="twitter:description"
-    content="Serveur francophone Ark Ascended — rejoins la tribu ! Communauté active, mods QoL, et aventure multijoueur.">
-  <meta name="twitter:image" content="https://lrios1805.github.io/Arktopia/assets/logo/Arktopia_logo_sans_fond.png">
-
-  <!-- ========== PERFORMANCE ========== -->
-  <link rel="preload" as="image" href="assets/bg-index.jpg">
-  <link rel="stylesheet" href="styles.css">
-
-  <!-- ========== DONNÉES STRUCTURÉES GOOGLE (JSON-LD) ========== -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Arktopia",
-    "url": "https://lrios1805.github.io/Arktopia/",
-    "logo": "https://lrios1805.github.io/Arktopia/assets/logo/Arktopia_logo_sans_fond.png",
-    "sameAs": [
-      "https://discord.gg/cGeN57YMDD",
-      "https://steamcommunity.com/app/2399830"
-    ],
-    "description": "Arktopia — serveur francophone Ark: Survival Ascended. Communauté conviviale, mods QoL, événements et aventure.",
-    "founder": {
-      "@type": "Person",
-      "name": "L. Rios"
-    }
-  }
-  </script>
 </head>
 
 <body class="page-index">
@@ -64,17 +25,16 @@
   <header>
     <nav>
       <div class="logo">
-        <img src="assets/logo/Arktopia_logo_sans_fond.png" alt="Logo Arktopia" width="128" height="128"
-          decoding="async">
+        <img src="assets/logo/Arktopia_logo_sans_fond.png" alt="Logo Arktopia">
         <span>Arktopia</span>
       </div>
 
       <!-- Bouton burger -->
       <button class="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-menu">☰</button>
 
-      <!-- Menu principal -->
-      <ul class="menu" id="main-menu" hidden>
-        <li><a href="index.html" class="active" aria-current="page">Accueil</a></li>
+      <!-- Donne un id à la liste -->
+      <ul class="menu" id="main-menu">
+        <li><a href="index.html" class="active">Accueil</a></li>
         <li><a href="about.html">À propos</a></li>
         <li><a href="rules.html">Règles</a></li>
         <li><a href="mods.html">Mods</a></li>
@@ -84,25 +44,21 @@
     </nav>
   </header>
 
-  <!-- Hero -->
   <section class="hero">
     <h1>Bienvenue sur <span class="highlight">Arktopia</span></h1>
     <p>Un serveur francophone Ark: Survival Ascended — survie, aventure et communauté !</p>
-    <!-- CTA principal -->
-    <a class="primary-cta" href="join.html">🎮 Rejoindre le serveur</a>
   </section>
 
   <!-- Section Promo -->
   <section class="promo">
     <h2>Découvre notre serveur</h2>
-    <img src="assets/images/ArKTOPIA_affiche_pub.png" alt="Affiche Arktopia" class="promo-img" width="900" height="506"
-      loading="lazy" decoding="async">
+    <img src="assets/images/Arktopia_affiche_pub.png" alt="Affiche Arktopia" class="promo-img">
   </section>
 
   <main>
     <!-- Petit séparateur décoratif (SVG, pas de CSS externe) -->
     <div aria-hidden="true">
-      <svg viewBox="0 0 1200 80" width="100%" height="40" role="img" aria-label="Décor ondulé">
+      <svg viewBox="0 0 1200 80" width="100%" height="40">
         <defs>
           <linearGradient id="g1" x1="0" x2="1">
             <stop offset="0" stop-color="#2b7cff"></stop>
@@ -118,7 +74,8 @@
       <p>
         Bienvenue sur <strong>Arktopia</strong>, un serveur francophone pensé pour des sessions épiques et détendues
         à la fois. Notre objectif&nbsp;: un <em>ARK: Survival Ascended</em> plus fluide, plus lisible, et encore plus
-        fun — sans dénaturer l’esprit survie.
+        fun —
+        sans dénaturer l’esprit survie.
       </p>
 
       <blockquote>
@@ -139,14 +96,18 @@
 
     <section>
       <h3>Nos mods phares 🔧</h3>
-      <p>Une sélection courte et efficace pour améliorer votre quotidien&nbsp;:</p>
+      <p>
+        Une sélection courte et efficace pour améliorer votre quotidien&nbsp;:
+      </p>
       <ul>
         <li>🔭 <strong>Awesome Spyglass!</strong> — infos claires sur les créatures en un coup d’œil.</li>
         <li>📦 <strong>Stacking/QoL</strong> — moins de grind, plus d’action.</li>
         <li>🧊 <strong>Cryo Storage</strong> — gérez vos dinos sans prise de tête.</li>
         <li>🛒 <strong>Shop/Économie</strong> — échangez et progressez à votre rythme.</li>
       </ul>
-      <p>👉 La liste complète et les liens Workshop sont sur la page <a href="mods.html">Mods</a>.</p>
+      <p>
+        👉 La liste complète et les liens Workshop sont sur la page <a href="mods.html">Mods</a>.
+      </p>
     </section>
 
     <section>
@@ -171,10 +132,9 @@
         </ul>
       </details>
     </section>
-
-    <a href="rules.html" class="discord-btn" target="_blank" rel="noopener" aria-label="Consulter le règlement complet">
-      Lire le règlement complet
-    </a>
+    
+    <a href="rules.html" class="discord-btn" target="_blank" rel="noopener"
+   aria-label="Consulter le règlement complet">Lire le règlement complet</a>
 
     <!-- Guide de démarrage rapide -->
     <section>
@@ -197,7 +157,7 @@
     </section>
 
     <div aria-hidden="true">
-      <svg viewBox="0 0 1200 80" width="100%" height="40" role="img" aria-label="Décor ondulé">
+      <svg viewBox="0 0 1200 80" width="100%" height="40">
         <defs>
           <linearGradient id="g2" x1="0" x2="1">
             <stop offset="0" stop-color="#00c9a7"></stop>

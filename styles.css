@@ -4,315 +4,408 @@
 
 /* --------- Reset & Base --------- */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 :root {
-  --bg: #0a0f1b;
-  --bg-2: #11151f;
-  --text: #f0f0f0;
-  --muted: #b9c0cf;
-  --primary: #22d3ee;     /* cyan */
-  --primary-2: #60a5fa;   /* bleu doux */
-  --shadow: rgba(0, 0, 0, .6);
-  --border: rgba(255, 255, 255, .08);
+    --bg: #0a0f1b;
+    --bg-2: #11151f;
+    --text: #f0f0f0;
+    --muted: #b9c0cf;
+    --primary: #22d3ee;
+    /* cyan */
+    --primary-2: #60a5fa;
+    /* bleu doux */
+    --shadow: rgba(0, 0, 0, .6);
+    --border: rgba(255, 255, 255, .08);
 }
 
-html, body { height: 100%; }
+html,
+body {
+    height: 100%;
+}
 
 body {
-  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background-color: var(--bg);
-  color: var(--text);
-  line-height: 1.6;
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
 }
 
 /* --------- Accessibilité / Focus --------- */
-a { color: inherit; text-decoration: none; }
+a {
+    color: inherit;
+    text-decoration: none;
+}
 
 a:focus-visible,
 button:focus-visible {
-  outline: 2px dashed var(--primary);
-  outline-offset: 3px;
+    outline: 2px dashed var(--primary);
+    outline-offset: 3px;
 }
 
 /* --------- Header & Nav --------- */
 header {
-  background: rgba(10, 15, 27, 0.95);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  border-bottom: 1px solid var(--border);
-  backdrop-filter: blur(6px);
+    background: rgba(10, 15, 27, 0.95);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(6px);
 }
 
 nav {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 14px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .logo img {
-  height: 56px;              /* ↓ était 90px : header plus compact */
-  width: auto;
-  display: block;
+    height: 90px;
+    width: auto;
+    display: block;
 }
 
 .logo span {
-  font-weight: 900;
-  letter-spacing: 1.5px;
-  color: var(--primary);
-  font-size: 1.4rem;
-  font-family: 'Segoe UI Black', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  text-shadow: 0 2px 12px var(--shadow), 0 1px 0 var(--primary-2);
-  text-transform: uppercase;
-  padding: 2px 10px;
-  border-radius: 8px;
-  background: linear-gradient(90deg, rgba(34,211,238,0.12) 0%, rgba(96,165,250,0.09) 100%);
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    color: var(--primary);
+    font-size: 1.7rem;
+    font-family: 'Segoe UI Black', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    text-shadow: 0 2px 12px var(--shadow), 0 1px 0 var(--primary-2);
+    text-transform: uppercase;
+    padding: 2px 10px;
+    border-radius: 8px;
+    background: linear-gradient(90deg, rgba(34,211,238,0.12) 0%, rgba(96,165,250,0.09) 100%);
 }
 
 .menu {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  align-items: center;
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    align-items: center;
 }
-
-.menu[hidden] { display: none !important; }  /* pour l’attribut hidden du HTML */
 
 .menu li a {
-  padding: 8px 10px;
-  border-radius: 8px;
-  color: #eef2ff;
-  transition: color .2s, background .2s;
+    padding: 8px 10px;
+    border-radius: 8px;
+    color: #eef2ff;
+    transition: color .2s, background .2s;
 }
 
-.menu li a:hover { color: white; background: rgba(255, 255, 255, .06); }
-.menu li a.active { color: var(--primary); background: rgba(34, 211, 238, .12); }
-.menu li a:focus-visible { background: rgba(255, 255, 255, .12); }
+.menu li a:hover {
+    color: white;
+    background: rgba(255, 255, 255, .06);
+}
 
-/* --------- Bouton burger --------- */
+.menu li a.active {
+    color: var(--primary);
+    background: rgba(34, 211, 238, .12);
+}
+
+/* --------- Bouton burger (injecté par script.js) --------- */
 .menu-btn {
-  display: none;
-  font-size: 2rem;          /* taille du symbole ☰ */
-  line-height: 1;
-  padding-left: 10px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  user-select: none;
-  transition: color .3s ease;
-  color: #0f75e9;           /* couleur du symbole ☰ */
+    display: none;
+    font-size: 2rem;          /* taille du symbole ☰ */
+    line-height: 1;
+    padding-left: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    user-select: none;
+    transition: color .3s ease;
+    color: #0f75e9;           /* couleur du symbole ☰ */
 }
-.menu-btn:hover { color: #0f75e9; }
-.menu-btn[aria-expanded="true"] { color: #2dfc04; }
 
-/* --------- Boutons utilitaires --------- */
-.donate-btn,
-.discord-btn {
+/* Au survol */
+.menu-btn:hover {
+    color: #0f75e9;   
+}
+
+/* couleur du symbole ☰ ouvert */
+.menu-btn[aria-expanded="true"] {
+    color: #2dfc04;
+}
+
+/* --------- Bouton Ko-fi --------- */
+.donate-btn {
   display: inline-flex;
-  align-items: center;
-  gap: .5rem;
   background: rgba(34, 211, 238, 0.08);
   color: var(--primary);
-  font-weight: 600;         /* ← ; corrigé */
-  padding: 6px 10px;
-  border-radius: 8px;
-  border: 1px solid var(--border);
+  font-weight: 600;
+  padding: 1px 5px;
+  border-radius: 4px;
+  border: none;
   box-shadow: none;
-  transition: background .2s ease, color .2s ease, transform .1s ease;
+  transition: background 0.2s ease, color 0.2s ease;
 }
-.donate-btn:hover,
-.discord-btn:hover { background: rgba(34, 211, 238, 0.15); color: white; }
-.donate-btn:active,
-.discord-btn:active { transform: translateY(1px); box-shadow: inset 0 2px 6px rgba(0, 0, 0, .3); }
-
-/* --------- Bouton principal Hero --------- */
-.primary-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-top: 1rem;
-  padding: 10px 18px;
-  border-radius: 10px;
-  border: 1px solid var(--border);
-  background: linear-gradient(90deg, rgba(34,211,238,.18), rgba(96,165,250,.14));
-  color: #e6f9ff;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .5px;
-  box-shadow: 0 4px 16px rgba(0,0,0,.25);
-  transition: all .2s ease;
-}
-.primary-cta:hover {
-  background: rgba(34,211,238,.24);
+.donate-btn:hover {
+  background: rgba(34, 211, 238, 0.15);
   color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0,0,0,.35);
 }
-.primary-cta:active { transform: translateY(0); box-shadow: 0 4px 12px rgba(0,0,0,.3) inset; }
 
+
+/* --------- Bouton Discord --------- */
+.discord-btn {
+  display: inline;
+  background: rgba(34, 211, 238, 0.08);
+  color: var(--primary);
+  font-weight: 600;
+  padding: 1px 5px;
+  border-radius: 4px;
+  border: none;
+  box-shadow: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.discord-btn:hover {
+  background: rgba(34, 211, 238, 0.15);
+  color: white;
+}
+ 
+.discord-btn:active {
+    transform: translateY(1px);
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, .3);
+}
 /* --------- Hero (zone avec image) --------- */
 .hero {
-  position: relative;
-  text-align: center;
-  padding: 120px 20px;
-  background: var(--bg) center/cover no-repeat;
-  border-bottom: 1px solid var(--border);
+    position: relative;
+    text-align: center;
+    padding: 120px 20px;
+    background: var(--bg) center/cover no-repeat;
+    border-bottom: 1px solid var(--border);
 }
+
 .hero::after {
-  /* voile pour lisibilité */
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, .15), rgba(0, 0, 0, .45));
+    /* voile pour lisibilité */
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .15), rgba(0, 0, 0, .45));
 }
-.hero > * { position: relative; z-index: 1; }
+
+.hero>* {
+    position: relative;
+    z-index: 1;
+}
 
 .hero h1 {
-  font-size: clamp(2rem, 4.5vw, 3.2rem);
-  font-weight: 800;
-  margin-bottom: 12px;
-  text-shadow: 0 6px 22px var(--shadow);
+    font-size: clamp(2rem, 4.5vw, 3.2rem);
+    font-weight: 800;
+    margin-bottom: 12px;
+    text-shadow: 0 6px 22px var(--shadow);
 }
-.hero p {
-  font-size: clamp(1rem, 1.5vw, 1.25rem);
-  color: #dbeafe;
-  text-shadow: 0 6px 22px var(--shadow);
-}
-.highlight { color: var(--primary); }
 
-/* Bouton générique (si utilisé) */
-.btn:active { transform: translateY(0); }
+.hero p {
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    color: #dbeafe;
+    text-shadow: 0 6px 22px var(--shadow);
+}
+
+.highlight {
+    color: var(--primary);
+}
+
+/* Bouton principal */
+.btn:active {
+    transform: translateY(0);
+}
 
 /* --------- Fonds par page --------- */
-.page-index .hero { background-image: url("assets/bg-index.jpg"); }
-.page-about .hero { background-image: url("assets/bg-about.jpg"); }
-.page-rules .hero { background-image: url("assets/bg-rules.jpg"); }
-.page-mods  .hero { background-image: url("assets/bg-mods.jpg"); }
-.page-join  .hero { background-image: url("assets/bg-join.jpg"); }
-.page-faq   .hero { background-image: url("assets/bg-faq.jpg"); }
+.page-index .hero {
+    background-image: url("assets/bg-index.jpg");
+}
+
+.page-about .hero {
+    background-image: url("assets/bg-about.jpg");
+}
+
+.page-rules .hero {
+    background-image: url("assets/bg-rules.jpg");
+}
+
+.page-mods .hero {
+    background-image: url("assets/bg-mods.jpg");
+}
+
+.page-join .hero {
+    background-image: url("assets/bg-join.jpg");
+}
+
+.page-faq .hero {
+    background-image: url("assets/bg-faq.jpg");
+}
 
 /* --------- Sections & Typo --------- */
 main {
-  max-width: 1100px;        /* aligné avec nav */
-  margin: 40px auto;
-  padding: 0 20px;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
 
-h1, h2, h3 {
-  color: var(--primary);
-  margin-bottom: 12px;
+h1,
+h2,
+h3 {
+    color: var(--primary);
+    margin-bottom: 12px;
 }
-h2 { font-size: clamp(1.4rem, 2.2vw, 1.8rem); }
-h3 { font-size: clamp(1.15rem, 1.8vw, 1.35rem); }
 
-p, ul, ol {
-  margin-bottom: 18px;
-  color: #e5e7eb;
+h2 {
+    font-size: clamp(1.4rem, 2.2vw, 1.8rem);
 }
-ul, ol { padding-left: 22px; }
+
+h3 {
+    font-size: clamp(1.15rem, 1.8vw, 1.35rem);
+}
+
+p,
+ul,
+ol {
+    margin-bottom: 18px;
+    color: #e5e7eb;
+}
+
+ul,
+ol {
+    padding-left: 22px;
+}
 
 code {
-  background: #0f172a;
-  color: #e2e8f0;
-  padding: 2px 6px;
-  border-radius: 6px;
+    background: #0f172a;
+    color: #e2e8f0;
+    padding: 2px 6px;
+    border-radius: 6px;
 }
 
 /* --------- Section Promo (affiche) --------- */
 .promo {
-  text-align: center;
-  margin: 48px auto;
-  padding: 0 20px;
+    text-align: center;
+    margin: 48px auto;
+    padding: 0 20px;
 }
-.promo h2 { margin-bottom: 16px; }
+
+.promo h2 {
+    margin-bottom: 16px;
+}
+
 .promo-img {
-  max-width: 100%;
-  width: min(900px, 90%);
-  border-radius: 12px;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, .6);
-  border: 1px solid var(--border);
+    max-width: 100%;
+    width: min(900px, 90%);
+    border-radius: 12px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, .6);
+    border: 1px solid var(--border);
 }
 
 /* --------- Footer --------- */
 footer {
-  text-align: center;
-  padding: 22px;
-  margin-top: 50px;
-  background: var(--bg-2);
-  color: #a3a3a3;
-  border-top: 1px solid var(--border);
-  font-size: .95rem;
+    text-align: center;
+    padding: 22px;
+    margin-top: 50px;
+    background: var(--bg-2);
+    color: #a3a3a3;
+    border-top: 1px solid var(--border);
+    font-size: .95rem;
 }
 
 /* --------- Utilitaires --------- */
-.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-.hidden { display: none !important; }
-:target { scroll-margin-top: 90px; }  /* ancres sous header sticky */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hidden {
+    display: none !important;
+}
 
 /* --------- Responsive --------- */
 @media (max-width: 900px) {
-  .menu { gap: 14px; }
+    .menu {
+        gap: 14px;
+    }
 }
 
 @media (max-width: 768px) {
-  /* nav mobile */
-  .menu {
-    display: none;
-    flex-direction: column;
-    gap: 10px;
-    position: absolute;
-    top: 64px;
-    right: 20px;
-    width: 220px;
-    background: #0f1422;
-    border: 1px solid var(--border);
-    padding: 14px;
-    border-radius: 12px;
-    box-shadow: 0 16px 40px rgba(0, 0, 0, .45);
-  }
-  .menu.active { display: flex; }       /* si tu utilises une classe */
-  .menu li a { display: block; }
-  .menu-btn { display: block; }         /* le burger s’affiche en mobile */
-  .hero { padding: 100px 18px; }
-  .promo { margin: 38px auto; }
+
+    /* nav mobile */
+    .menu {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        position: absolute;
+        top: 64px;
+        right: 20px;
+        width: 220px;
+        background: #0f1422;
+        border: 1px solid var(--border);
+        padding: 14px;
+        border-radius: 12px;
+        box-shadow: 0 16px 40px rgba(0, 0, 0, .45);
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu li a {
+        display: block;
+    }
+
+    .menu-btn {
+        display: block;  /* le burger s’affiche en mobile */
+    }
+
+    .hero {
+        padding: 100px 18px;
+    }
+
+    .promo {
+        margin: 38px auto;
+    }
 }
 
 /* --------- Petites animations --------- */
 @media (prefers-reduced-motion: no-preference) {
-  .btn, .menu li a { transition: all .2s ease; }
+
+    .btn,
+    .menu li a {
+        transition: all .2s ease;
+    }
 }
 
-/* --------- Blocks règles --------- */
 .rules-discord {
-  margin-bottom: 70px;
-  padding: 20px;
-  background: rgba(34, 211, 238, 0.05);   /* léger cyan */
-  border-left: 4px solid #22d3ee;
-  border-radius: 8px;
+    margin-bottom: 70px;
+    padding: 20px;
+    background: rgba(34, 211, 238, 0.05);
+    /* léger cyan */
+    border-left: 4px solid #22d3ee;
+    border-radius: 8px;
 }
+
 .rules-ingame {
-  padding: 20px;
-  background: rgba(167, 139, 250, 0.05);  /* léger violet */
-  border-left: 4px solid #a78bfa;
-  border-radius: 8px;
+    padding: 20px;
+    background: rgba(167, 139, 250, 0.05);
+    /* léger violet */
+    border-left: 4px solid #a78bfa;
+    border-radius: 8px;
 }
 
-/* ===== MODS (grille moderne) ===== */
+/* ===== MODS (grille moderne, basé sur tes variables) ===== */
 
-.mods-page .hero { background-image: url("assets/bg-mods.jpg"); }
+.mods-page .hero {
+  background-image: url("assets/bg-mods.jpg");
+}
 
 /* Section */
 .mods-list-section {
@@ -328,15 +421,23 @@ footer {
   margin-bottom: 8px;
   text-shadow: 0 6px 22px var(--shadow);
 }
-.section-desc { color: var(--muted); margin-bottom: 16px; }
+.section-desc {
+  color: var(--muted);
+  margin-bottom: 16px;
+}
 
 /* Séparateur subtil sous le titre */
-.section-title + .section-desc { position: relative; padding-bottom: 12px; }
+.section-title + .section-desc {
+  position: relative;
+  padding-bottom: 12px;
+}
 .section-title + .section-desc::after {
   content: "";
   position: absolute;
-  left: 0; bottom: 0;
-  width: 140px; height: 2px;
+  left: 0;
+  bottom: 0;
+  width: 140px;
+  height: 2px;
   background: linear-gradient(90deg, var(--primary), rgba(255,255,255,0));
   opacity: .65;
 }
@@ -349,14 +450,13 @@ footer {
   margin-top: 18px;
 }
 
-/* Carte (version finale en flex, nettoyage des doublons) */
+/* Carte */
 .mod-card-modern {
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding: 20px;
+  display: grid;
+  grid-template-columns: 60px 1fr;   /* icône | contenu */
+  align-items: center;
+  gap: 14px;
+  padding: 14px;
   border: 1px solid var(--border);
   border-radius: 14px;
   background: linear-gradient(145deg, rgba(17,21,31,.9), rgba(10,15,27,.9));
@@ -371,17 +471,7 @@ footer {
 }
 .mod-card-modern:active { transform: translateY(-1px); }
 
-/* Accent lumineux discret sur le côté gauche */
-.mod-card-modern::before {
-  content: "";
-  position: absolute;
-  left: -2px; top: 0; bottom: 0;
-  width: 3px;
-  background: linear-gradient(180deg, var(--primary), var(--primary-2));
-  opacity: .55;
-}
-
-/* Icône (optionnelle) */
+/* Icône */
 .mod-icon {
   width: 60px; height: 60px;
   border-radius: 12px;
@@ -391,7 +481,7 @@ footer {
   box-shadow: inset 0 0 0 1px rgba(0,0,0,.25);
 }
 .mod-icon img {
-  width: 44px; height: 44px;
+  width: 44px; height: 44px; 
   object-fit: contain; display: block;
   filter: drop-shadow(0 4px 10px rgba(0,0,0,.35));
 }
@@ -399,6 +489,60 @@ footer {
 /* Titres + texte carte */
 .mod-card-modern h2 {
   margin: 0 0 6px;
+  font-size: 1.05rem;
+  color: #eef2ff;
+}
+.mod-card-modern p {
+  margin: 0;
+  color: #c9d4e5;
+  opacity: .95;
+  line-height: 1.45;
+}
+
+/* Accent lumineux discret sur le côté gauche */
+.mod-card-modern {
+  position: relative;
+  overflow: hidden;
+}
+.mod-card-modern::before {
+  content: "";
+  position: absolute;
+  left: -2px; top: 0; bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--primary), var(--primary-2));
+  opacity: .55;
+}
+
+/* Effet “pulse doux” sur l’icône au hover */
+@media (prefers-reduced-motion: no-preference) {
+  .mod-card-modern:hover .mod-icon img { 
+    transform: scale(1.03);
+    transition: transform .18s ease;
+  }
+}
+
+/* Petits écrans : resserrer un peu */
+@media (max-width: 420px) {
+  .mod-card-modern {
+    grid-template-columns: 52px 1fr;
+    padding: 12px;
+  }
+  .mod-icon { width: 52px; height: 52px; }
+  .mod-icon img { width: 38px; height: 38px; }
+}
+
+/* --- Ajustement affichage cartes mods --- */
+.mod-card-modern {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+  padding: 20px;
+  gap: 8px;
+}
+
+.mod-card-modern h2 {
   font-size: 1.1rem;
   font-weight: 700;
   color: var(--primary);
@@ -406,19 +550,16 @@ footer {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 .mod-card-modern p {
-  margin: 0;
   color: #c9d4e5;
   font-size: 0.95rem;
   line-height: 1.5;
 }
 
-/* Petits écrans : assouplir le titre */
+/* Meilleure disposition sur mobile */
 @media (max-width: 600px) {
-  .mod-card-modern h2 { white-space: normal; }
+  .mod-card-modern h2 {
+    white-space: normal;
+  }
 }
-
-/* --------- Détails / résumé (accessibilité) --------- */
-details > summary { cursor: pointer; }
-details > summary:focus-visible,
-details > summary:hover { color: #fff; }
