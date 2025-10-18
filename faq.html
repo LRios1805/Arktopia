@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FAQ - Arktopia</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Tu as une question sur Arktopia ? Consulte notre FAQ pour tout savoir sur les règles, les mods, le gameplay et plus encore.">
+  <link rel="stylesheet" href="styles.css?v=20241018">
 
   <!-- ========== META DISCORD / SOCIAL PREVIEW ========== -->
   <meta property="og:title" content="FAQ - Arktopia">
@@ -19,7 +20,7 @@
 
 </head>
 
-<body class="faq-page">
+<body class="page-faq">
   <header>
     <nav>
       <div class="logo">
@@ -28,7 +29,7 @@
       </div>
 
       <!-- Bouton burger -->
-      <button class="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-menu">☰</button>
+      <button class="menu-btn" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-menu">☰</button>
 
       <!-- Donne un id à la liste -->
       <ul class="menu" id="main-menu">
@@ -37,49 +38,53 @@
         <li><a href="rules.html">Règles</a></li>
         <li><a href="mods.html">Mods</a></li>
         <li><a href="join.html">Rejoindre</a></li>
-        <li><a href="faq.html" class="active">FAQ</a></li>
+        <li><a href="faq.html">FAQ</a></li>
       </ul>
     </nav>
-
   </header>
 
   <main>
     <h1>Foire aux questions</h1>
-    <h3>Le serveur est-il gratuit ?</h3>
-    <p>Oui, il est totalement gratuit et financé par l'équipe admin, et par les dons de la communauté.</p>
 
-    <h3>Y a-t-il un Discord ?</h3>
-    <p>Oui, rejoins-nous ici : <a href="https://discord.gg/cGeN57YMDD">Lien Discord</a></p>
+    <section class="faq-item">
+      <h2>Le serveur est-il gratuit&nbsp;?</h2>
+      <p>Oui, il est totalement gratuit et financé par l'équipe d'administration ainsi que par les dons de la communauté.</p>
+    </section>
 
-    <h3>Quels sont les paramètres du serveur ?</h3>
-    <p>Les rates sont configurées pour un équilibre entre survie et fun. Les stats se rapprochent de l'expérience
-      vanilla, avec quelques ajustements pour améliorer le gameplay.</p>
+    <section class="faq-item">
+      <h2>Y a-t-il un Discord&nbsp;?</h2>
+      <p>Oui, rejoins-nous ici : <a href="https://discord.gg/cGeN57YMDD" target="_blank" rel="noopener noreferrer">Lien Discord</a></p>
+    </section>
 
-    <h3>Comment signaler un problème ou un bug ?</h3>
-    <p>Tu peux signaler les problèmes sur notre <a href="https://discord.gg/cGeN57YMDD" class="discord-btn"
-        target="_blank" rel="noopener" role="button" aria-label="Rejoindre notre Discord">
-        <strong>Discord</strong>
-      </a>
-      dans le canal <strong>#ticket</strong>.</p>
+    <section class="faq-item">
+      <h2>Quels sont les paramètres du serveur&nbsp;?</h2>
+      <p>Les taux sont configurés pour un équilibre entre survie et fun. Les statistiques se rapprochent de l'expérience «&nbsp;vanilla&nbsp;», avec quelques ajustements pour améliorer le gameplay.</p>
+    </section>
 
-    <h3>Quels sont les mods installés ?</h3>
-    <p>Tu peux consulter la liste complète des mods sur notre page <a href="mods.html" class="mods-btn">Mods</a>.</p>
+    <section class="faq-item">
+      <h2>Comment signaler un problème ou un bug&nbsp;?</h2>
+      <p>Tu peux signaler les problèmes sur notre <a href="https://discord.gg/cGeN57YMDD" class="discord-btn" target="_blank" rel="noopener noreferrer" role="button" aria-label="Rejoindre notre Discord"><strong>Discord</strong></a> dans le canal <strong>#ticket</strong>.</p>
+    </section>
 
-    <h3>Y a-t-il des événements spéciaux ?</h3>
-    <p>Oui, nous organisons régulièrement des événements pour la communauté. Reste à l'écoute sur notre Discord pour les
-      annonces.</p>
+    <section class="faq-item">
+      <h2>Quels sont les mods installés&nbsp;?</h2>
+      <p>Tu peux consulter la liste complète des mods sur notre page <a href="mods.html" class="mods-btn">Mods</a>.</p>
+    </section>
 
-    <h3>Comment puis-je aider ou contribuer au serveur ?</h3>
-    <p>Tu peux aider en participant activement sur le serveur et le Discord, en respectant les règles, et en invitant
-      tes amis à nous rejoindre. Les dons sont également appréciés pour aider à maintenir le serveur.</p>
-    <a href="https://ko-fi.com/arktopia" target="_blank" rel="noopener noreferrer" class="faq-btn" role="button"
-      aria-label="Soutenir le serveur sur Ko-fi">
-      💙 Soutenir le serveur sur Ko-fi
-    </a>
+    <section class="faq-item">
+      <h2>Y a-t-il des événements spéciaux&nbsp;?</h2>
+      <p>Oui, nous organisons régulièrement des événements pour la communauté. Reste à l'écoute sur notre Discord pour les annonces.</p>
+    </section>
+
+    <section class="faq-item">
+      <h2>Comment puis-je aider ou contribuer au serveur&nbsp;?</h2>
+      <p>Tu peux aider en participant activement sur le serveur et le Discord, en respectant les règles, et en invitant tes amis à nous rejoindre. Les dons sont également appréciés pour aider à maintenir le serveur.</p>
+      <a href="https://ko-fi.com/arktopia" target="_blank" rel="noopener noreferrer" class="faq-btn" role="button" aria-label="Soutenir le serveur sur Ko-fi">💙 Soutenir le serveur sur Ko‑fi</a>
+    </section>
 
   </main>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=20241018"></script>
 
   <footer>
     <p>© 2025 Arktopia</p>

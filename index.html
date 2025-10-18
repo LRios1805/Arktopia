@@ -5,7 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Arktopia - Serveur Ark Ascended</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Rejoins Arktopia — un serveur francophone Ark: Survival Ascended. Communauté, événements et mods sélectionnés pour une expérience PvE optimisée.">
+  <link rel="icon" href="assets/logo/favicon.png">
+  <link rel="stylesheet" href="styles.css?v=20241018">
 
   <!-- ========== META DISCORD / SOCIAL PREVIEW ========== -->
   <meta property="og:title" content="Arktopia - Serveur Ark: Survival Ascended">
@@ -23,18 +25,18 @@
 
   <!-- Header -->
   <header>
-    <nav>
+    <nav role="navigation" aria-label="Navigation principale">
       <div class="logo">
         <img src="assets/logo/Arktopia_logo_sans_fond.png" alt="Logo Arktopia">
         <span>Arktopia</span>
       </div>
 
       <!-- Bouton burger -->
-      <button class="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-menu">☰</button>
+      <button class="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-menu" aria-haspopup="true">☰</button>
 
       <!-- Donne un id à la liste -->
       <ul class="menu" id="main-menu">
-        <li><a href="index.html" class="active">Accueil</a></li>
+        <li><a href="index.html">Accueil</a></li>
         <li><a href="about.html">À propos</a></li>
         <li><a href="rules.html">Règles</a></li>
         <li><a href="mods.html">Mods</a></li>
@@ -45,20 +47,47 @@
   </header>
 
   <section class="hero">
-    <h1>Bienvenue sur <span class="highlight">Arktopia</span></h1>
-    <p>Un serveur francophone Ark: Survival Ascended — survie, aventure et communauté !</p>
+    <div class="hero-inner">
+      <span class="hero-eyebrow reveal">Serveur Ark: Survival Ascended francophone</span>
+      <h1 class="reveal delay-1">Bienvenue sur <span class="highlight">Arktopia</span></h1>
+      <p class="reveal delay-2">Une expérience PvE premium : survie, événements communautaires et confort de jeu soigné.
+      </p>
+
+      <div class="hero-actions reveal delay-3">
+        <a href="join.html" class="cta primary join-btn">Rejoindre le serveur</a>
+        <a href="https://discord.gg/cGeN57YMDD" class="cta ghost discord-btn" target="_blank" rel="noopener noreferrer">Découvrir
+          le Discord</a>
+      </div>
+
+      <div class="hero-stats reveal delay-4" aria-label="Points forts du serveur">
+        <div class="stat-card">
+          <p class="stat-value">24/7</p>
+          <p class="stat-label">Serveur disponible</p>
+        </div>
+        <div class="stat-card">
+          <p class="stat-value">15+</p>
+          <p class="stat-label">Événements & défis</p>
+        </div>
+        <div class="stat-card">
+          <p class="stat-value">Mods triés</p>
+          <p class="stat-label">Qualité de vie optimisée</p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Section Promo -->
-  <section class="promo">
-    <h2>Découvre notre serveur</h2>
-    <img src="assets/images/Arktopia_affiche_pub.png" alt="Affiche Arktopia" class="promo-img">
+  <section class="promo reveal">
+    <div class="promo-card">
+      <h2>Découvre notre serveur</h2>
+      <img src="assets/images/Arktopia_affiche_pub.png" alt="Affiche Arktopia" class="promo-img">
+    </div>
   </section>
 
   <main>
     <!-- Petit séparateur décoratif (SVG, pas de CSS externe) -->
     <div aria-hidden="true">
-      <svg viewBox="0 0 1200 80" width="100%" height="40">
+      <svg viewBox="0 0 1200 80" width="100%" height="40" focusable="false" aria-hidden="true">
         <defs>
           <linearGradient id="g1" x1="0" x2="1">
             <stop offset="0" stop-color="#2b7cff"></stop>
@@ -69,8 +98,8 @@
       </svg>
     </div>
 
-    <section>
-      <h2>Arktopia, l’aventure commence ici 🦖</h2>
+    <section class="section-block glass reveal">
+      <h2 class="section-heading">Arktopia, l’aventure commence ici 🦖</h2>
       <p>
         Bienvenue sur <strong>Arktopia</strong>, un serveur francophone pensé pour des sessions épiques et détendues
         à la fois. Notre objectif&nbsp;: un <em>ARK: Survival Ascended</em> plus fluide, plus lisible, et encore plus
@@ -78,14 +107,14 @@
         sans dénaturer l’esprit survie.
       </p>
 
-      <blockquote>
+      <blockquote class="quote-card">
         “Construisez. Survivez. Coopérez. Dominez.” — et laissez votre marque sur l’île.
       </blockquote>
     </section>
 
-    <section>
-      <h3>Pourquoi nous rejoindre ✨</h3>
-      <ul>
+    <section class="section-block reveal">
+      <h3 class="section-heading">Pourquoi nous rejoindre ✨</h3>
+      <ul class="feature-list">
         <li>🛡️ <strong>Stabilité & fair-play</strong> — une équipe à l’écoute et une communauté bienveillante.</li>
         <li>⚙️ <strong>Qualité de vie</strong> — des mods utiles (stack, spyglass, shop…) qui respectent le gameplay.
         </li>
@@ -94,28 +123,40 @@
       </ul>
     </section>
 
-    <section>
-      <h3>Nos mods phares 🔧</h3>
+    <section class="section-block glass reveal">
+      <h3 class="section-heading">Nos mods phares 🔧</h3>
       <p>
         Une sélection courte et efficace pour améliorer votre quotidien&nbsp;:
       </p>
-      <ul>
-        <li>🔭 <strong>Awesome Spyglass!</strong> — infos claires sur les créatures en un coup d’œil.</li>
-        <li>📦 <strong>Stacking/QoL</strong> — moins de grind, plus d’action.</li>
-        <li>🧊 <strong>Cryo Storage</strong> — gérez vos dinos sans prise de tête.</li>
-        <li>🛒 <strong>Shop/Économie</strong> — échangez et progressez à votre rythme.</li>
+      <ul class="feature-grid">
+        <li>
+          <h4>🔭 Awesome Spyglass!</h4>
+          <p>Informations claires sur les créatures en un coup d’œil pour mieux planifier vos captures.</p>
+        </li>
+        <li>
+          <h4>📦 Stacking / QoL</h4>
+          <p>Moins de grind, plus d’action pour profiter des sessions de jeu longues et fluides.</p>
+        </li>
+        <li>
+          <h4>🧊 Cryo Storage</h4>
+          <p>Gérez vos dinos sans contrainte et organisez vos bases simplement.</p>
+        </li>
+        <li>
+          <h4>🛒 Shop & économie</h4>
+          <p>Échangez, progressez et débloquez des bonus grâce à une boutique équilibrée.</p>
+        </li>
       </ul>
       <p>
         👉 La liste complète et les liens Workshop sont sur la page <a href="mods.html" class="mods-btn">Mods</a>.
       </p>
     </section>
 
-    <section>
-      <h3>Les bases à connaître 📜</h3>
+    <section class="section-block reveal">
+      <h3 class="section-heading">Les bases à connaître 📜</h3>
 
-      <details>
+      <details class="accordion">
         <summary>Règles essentielles</summary>
-        <ul>
+        <ul class="accordion-list">
           <li>🤝 Respect & fair-play entre joueurs et tribus.</li>
           <li>🏘️ Nom de tribu obligatoire et approprié.</li>
           <li>🐾 Préservez la faune utile près des zones communes.</li>
@@ -123,41 +164,44 @@
         </ul>
       </details>
 
-      <details>
+      <details class="accordion">
         <summary>Performance & constructions</summary>
-        <ul>
+        <ul class="accordion-list">
           <li>📐 Structures optimisées pour éviter le lag (décor Ok, spam Non).</li>
           <li>🚫 Pas d’obstruction des passages clés ni des ressources majeures.</li>
           <li>🔄 Respect des constructions des autres joueurs.</li>
         </ul>
       </details>
     </section>
-    
-    <a href="rules.html" class="rules-btn" target="_blank" rel="noopener"
-   aria-label="Consulter le règlement complet">Lire le règlement complet</a>
+
+    <a href="rules.html" class="cta outline rules-btn reveal" target="_blank" rel="noopener noreferrer"
+      aria-label="Consulter le règlement complet">Lire le règlement complet</a>
 
     <!-- Guide de démarrage rapide -->
-    <section>
-      <h3>Comment commencer 🚀</h3>
-      <ol>
+    <section class="section-block glass reveal">
+      <h3 class="section-heading">Comment commencer 🚀</h3>
+      <ol class="steps-list">
         <li>🎮 Rejoignez le serveur via la page <a href="join.html" class="join-btn">Rejoindre</a>.</li>
         <li>🧭 Lisez les <a href="rules.html" class="rules-btn">Règles</a> pour partir du bon pied.</li>
         <li>🧰 Parcourez les <a href="mods.html" class="mods-btn">Mods</a> et préparez votre setup.</li>
-        <li>📣 Présentez-vous sur le <a href="https://discord.gg/cGeN57YMDD" class="discord-btn">Discord</a> de la communauté (facultatif mais recommandé).</li>
+        <li>📣 Présentez-vous sur le <a href="https://discord.gg/cGeN57YMDD" class="discord-btn" target="_blank" rel="noopener noreferrer">Discord</a> de la
+          communauté (facultatif mais recommandé).</li>
       </ol>
     </section>
 
-    <section>
-      <h3>Prêt(e) à écrire votre légende&nbsp;? 🌋</h3>
+    <section class="section-block hero-cta reveal">
+      <h3 class="section-heading">Prêt(e) à écrire votre légende&nbsp;? 🌋</h3>
       <p>
         Traversez les jungles, domptez les créatures, bâtissez votre tribu. Arktopia n’attend plus que vous.
-        <br>
-        <a href="join.html" class="join-btn">➡️ Rejoindre le serveur</a>
       </p>
+      <div class="hero-actions">
+        <a href="join.html" class="cta primary join-btn">➡️ Rejoindre le serveur</a>
+        <a href="about.html" class="cta ghost about-btn">Découvrir l’univers</a>
+      </div>
     </section>
 
     <div aria-hidden="true">
-      <svg viewBox="0 0 1200 80" width="100%" height="40">
+      <svg viewBox="0 0 1200 80" width="100%" height="40" focusable="false" aria-hidden="true">
         <defs>
           <linearGradient id="g2" x1="0" x2="1">
             <stop offset="0" stop-color="#00c9a7"></stop>
@@ -173,7 +217,7 @@
     <p>© 2025 Arktopia — Serveur Ark: Survival Ascended</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=20241018"></script>
 </body>
 
 </html>
