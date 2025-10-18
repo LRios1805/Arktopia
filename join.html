@@ -2,35 +2,45 @@
 <html lang="fr">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rejoindre - Arktopia</title>
-  <meta name="description" content="Prêt à rejoindre Arktopia ? Suivez les étapes simples pour intégrer notre monde Ark: Survival Ascended dès aujourd’hui.">
-  <link rel="stylesheet" href="styles.css?v=20241018">
+  <meta name="description"
+    content="Prêt à rejoindre Arktopia ? Suivez les étapes simples pour intégrer notre monde Ark: Survival Ascended dès aujourd’hui." />
+
+  <link rel="icon" href="assets/logo/favicon.png" />
+  <link rel="stylesheet" href="styles.css?v=20241018" />
 
   <!-- ========== META DISCORD / SOCIAL PREVIEW ========== -->
-  <meta property="og:title" content="Rejoindre le serveur - Arktopia">
+  <meta property="og:title" content="Rejoindre le serveur - Arktopia" />
   <meta property="og:description"
-    content="Prêt à rejoindre Arktopia ? Suivez les étapes simples pour intégrer notre monde Ark: Survival Ascended dès aujourd’hui.">
-  <meta property="og:image" content="https://lrios1805.github.io/Arktopia/assets/images/bg-join.jpg">
-  <meta property="og:url" content="https://lrios1805.github.io/Arktopia/join.html">
-  <meta property="og:type" content="website">
-  <meta name="theme-color" content="#22d3ee">
+    content="Prêt à rejoindre Arktopia ? Suivez les étapes simples pour intégrer notre monde Ark: Survival Ascended dès aujourd’hui." />
+  <meta property="og:image" content="https://lrios1805.github.io/Arktopia/assets/images/bg-join.jpg" />
+  <meta property="og:url" content="https://lrios1805.github.io/Arktopia/join.html" />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#22d3ee" />
   <!-- ==================================================== -->
 </head>
 
 <body class="page-join">
+  <!-- Lien d'évitement -->
+  <a href="#contenu" class="skip-link"
+    style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
+    Aller au contenu
+  </a>
+
   <header>
-    <nav>
+    <nav role="navigation" aria-label="Navigation principale">
       <div class="logo">
-        <img src="assets/logo/Arktopia_logo_sans_fond.png" alt="Logo Arktopia">
+        <img src="assets/logo/Arktopia_logo_sans_fond.png" alt="Logo Arktopia" />
         <span>Arktopia</span>
       </div>
 
       <!-- Bouton burger -->
-      <button class="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-menu">☰</button>
+      <button class="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-menu"
+        aria-haspopup="true">☰</button>
 
-      <!-- Donne un id à la liste -->
+      <!-- Menu principal -->
       <ul class="menu" id="main-menu">
         <li><a href="index.html">Accueil</a></li>
         <li><a href="about.html">À propos</a></li>
@@ -42,27 +52,68 @@
     </nav>
   </header>
 
+  <!-- Hero -->
   <section class="hero">
-    <h1>Comment rejoindre Arktopia ?</h1>
-    <p>Suivez ces étapes pour nous rejoindre :</p>
+    <div class="hero-inner">
+      <span class="hero-eyebrow reveal">Démarrer l’aventure</span>
+      <h1 class="reveal delay-1">Comment rejoindre <span class="highlight">Arktopia</span> ?</h1>
+      <p class="reveal delay-2">Suivez ces étapes pour nous rejoindre :</p>
+
+      <div class="hero-actions reveal delay-3">
+        <a href="https://discord.gg/cGeN57YMDD" class="cta ghost discord-btn" target="_blank"
+          rel="noopener noreferrer">Rejoindre le Discord</a>
+        <a href="mods.html" class="cta outline mods-btn">Voir les mods</a>
+      </div>
+    </div>
   </section>
 
-  <main>
-    <h2>Rejoindre Arktopia</h2>
-    <p>Pour nous rejoindre :</p>
-    <ol>
-      <li>Installez <strong>Ark: Survival Ascended</strong> via Steam, Xbox ou PS5.</li>
-      <li>Recherchez "<strong>Arktopia</strong>" dans la liste des serveurs communautaires.</li>
-      <li>Installez les <a href="mods.html" class="mods-btn">mods</a> du serveur.</li>
-      <li>Rejoignez notre <a href="https://discord.gg/cGeN57YMDD" class="discord-btn" target="_blank" rel="noopener noreferrer">serveur Discord</a> pour les dernières annonces et le support.</li>
-    </ol>
+  <!-- Contenu -->
+  <main id="contenu" tabindex="-1">
+    <section class="section-block reveal">
+      <h2 class="section-heading">Rejoindre Arktopia</h2>
+      <p>Pour nous rejoindre :</p>
+      <ol class="steps-list">
+        <li>Installez <strong>Ark: Survival Ascended</strong> via Steam, Xbox ou PS5.</li>
+        <li>Recherchez « <strong>Arktopia</strong> » dans la liste des serveurs communautaires.</li>
+        <li>Installez les <a href="mods.html" class="mods-btn">mods</a> du serveur.</li>
+        <li>Rejoignez notre <a href="https://discord.gg/cGeN57YMDD" class="discord-btn" target="_blank"
+            rel="noopener noreferrer">serveur Discord</a> pour les dernières annonces et le support.</li>
+      </ol>
+    </section>
+
+    <section class="section-block glass reveal">
+      <h3 class="section-heading">Besoin d’aide ?</h3>
+      <details class="accordion">
+        <summary>Je ne trouve pas le serveur en jeu</summary>
+        <ul class="accordion-list">
+          <li>Vérifiez le filtre « Communautaire » et retentez une recherche.</li>
+          <li>Rafraîchissez la liste ou redémarrez le jeu si nécessaire.</li>
+        </ul>
+      </details>
+      <details class="accordion">
+        <summary>Les mods ne se téléchargent pas</summary>
+        <ul class="accordion-list">
+          <li>Lancez le jeu, puis retournez au menu pour forcer l’installation.</li>
+          <li>Assurez-vous d’avoir suffisamment d’espace disque.</li>
+        </ul>
+      </details>
+    </section>
+
+    <section class="section-block hero-cta reveal">
+      <h3 class="section-heading">On vous attend sur l’île 🦖</h3>
+      <div class="hero-actions">
+        <a href="mods.html" class="cta outline mods-btn">Préparer les mods</a>
+        <a href="https://discord.gg/cGeN57YMDD" class="cta primary join-btn" target="_blank"
+          rel="noopener noreferrer">Rejoindre le Discord</a>
+      </div>
+    </section>
   </main>
 
-  <script src="script.js?v=20241018"></script>
-
   <footer>
-    <p>© 2025 Arktopia</p>
+    <p>© 2025 Arktopia — Serveur Ark: Survival Ascended</p>
   </footer>
+
+  <script src="script.js?v=20241018"></script>
 </body>
 
 </html>

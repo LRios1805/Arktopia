@@ -2,97 +2,163 @@
 <html lang="fr">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mods - Arktopia</title>
-  <meta name="description" content="Découvrez les mods installés sur le serveur Arktopia : confort, performance et immersion.">
-  <link rel="stylesheet" href="styles.css?v=20241018">
+  <meta name="description"
+    content="Découvrez les mods installés sur le serveur Arktopia : confort, performance et immersion." />
+
+  <link rel="icon" href="assets/logo/favicon.png" />
+  <link rel="stylesheet" href="styles.css?v=20241018" />
 
   <!-- ========== META DISCORD / SOCIAL PREVIEW ========== -->
-  <meta property="og:title" content="Mods utilisés - Arktopia">
-  <meta property="og:description" content="Découvre tous les mods installés sur le serveur Arktopia : confort, performance et immersion garantis.">
-  <meta property="og:image" content="https://lrios1805.github.io/Arktopia/assets/images/bg-mods.jpg">
-  <meta property="og:url" content="https://lrios1805.github.io/Arktopia/mods.html">
-  <meta property="og:type" content="article">
-  <meta name="theme-color" content="#22d3ee">
+  <meta property="og:title" content="Mods utilisés - Arktopia" />
+  <meta property="og:description"
+    content="Découvre tous les mods installés sur le serveur Arktopia : confort, performance et immersion garantis." />
+  <meta property="og:image" content="https://lrios1805.github.io/Arktopia/assets/images/bg-mods.jpg" />
+  <meta property="og:url" content="https://lrios1805.github.io/Arktopia/mods.html" />
+  <meta property="og:type" content="article" />
+  <meta name="theme-color" content="#22d3ee" />
   <!-- ==================================================== -->
-
 </head>
 
 <body class="page-mods">
-  <a class="skip-link" href="#main">Aller au contenu</a>
+  <!-- Lien d'évitement -->
+  <a class="skip-link" href="#contenu"
+    style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Aller au contenu</a>
 
   <header>
-    <nav role="navigation">
+    <nav role="navigation" aria-label="Navigation principale">
       <div class="logo">
-        <img src="assets/logo/Arktopia_logo_sans_fond.png" alt="Logo Arktopia">
+        <img src="assets/logo/Arktopia_logo_sans_fond.png" alt="Logo Arktopia" />
         <span>Arktopia</span>
       </div>
 
       <!-- Bouton burger -->
-      <button class="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-menu">☰</button>
+      <button class="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-menu"
+        aria-haspopup="true">☰</button>
 
-      <!-- Donne un id à la liste -->
+      <!-- Menu principal -->
       <ul class="menu" id="main-menu">
         <li><a href="index.html">Accueil</a></li>
         <li><a href="about.html">À propos</a></li>
         <li><a href="rules.html">Règles</a></li>
-        <li><a href="mods.html">Mods</a></li>
+        <li><a href="mods.html" aria-current="page">Mods</a></li>
         <li><a href="join.html">Rejoindre</a></li>
         <li><a href="faq.html">FAQ</a></li>
       </ul>
     </nav>
   </header>
 
+  <!-- Hero -->
   <section class="hero">
-    <h1>Mods d’Arktopia</h1>
-    <p>Découvrez les mods qui enrichissent votre expérience de jeu sur notre serveur.</p>
+    <div class="hero-inner">
+      <span class="hero-eyebrow reveal">Confort • Performance • Immersion</span>
+      <h1 class="reveal delay-1">Mods d’<span class="highlight">Arktopia</span></h1>
+      <p class="reveal delay-2">Découvrez les mods qui enrichissent votre expérience de jeu sur notre serveur.</p>
+      <div class="hero-actions reveal delay-3">
+        <a href="#contenu" class="cta outline mods-btn">Voir la liste</a>
+        <a href="rules.html" class="cta ghost rules-btn">Consulter les règles</a>
+      </div>
+    </div>
   </section>
 
-  <main id="main">
-    <section class="mods-list-section">
+  <!-- Contenu -->
+  <main id="contenu" tabindex="-1">
+    <section class="mods-list-section section-block reveal">
       <h2 class="section-title">🌟 Mods utilisés</h2>
       <p class="section-desc">Voici la liste des principaux mods installés sur Arktopia :</p>
 
-      <div class="mods-grid-modern">
-        <div class="mod-card-modern">
-          <h3>Pelayori's Cryo Storage</h3>
-          <p>Stockage de dinos cryogénisés et terminal cryo</p>
-        </div>
+      <!-- Barre de recherche / filtre (hookée par script.js) -->
+      <div class="section-block glass" style="display:grid;gap:12px; margin-bottom:18px;">
+        <label for="mods-search" class="visually-hidden" style="position:absolute;left:-9999px;">Rechercher un
+          mod</label>
+        <input id="mods-search" type="search" placeholder="Rechercher un mod (nom, description, tag)…"
+          style="padding:10px 14px;border-radius:12px;border:1px solid var(--border);background:rgba(255,255,255,0.04);color:var(--text);" />
+        <label for="mods-filter" class="visually-hidden" style="position:absolute;left:-9999px;">Filtrer par
+          catégorie</label>
+        <select id="mods-filter"
+          style="padding:10px 14px;border-radius:12px;border:1px solid var(--border);background:rgba(255,255,255,0.04);color:var(--text);">
+          <option value="">Toutes les catégories</option>
+          <option value="qol">Qualité de vie</option>
+          <option value="stacking">Stacking</option>
+          <option value="economy">Économie / Shop</option>
+          <option value="structures">Structures</option>
+          <option value="ui">Interface</option>
+          <option value="creatures">Créatures</option>
+        </select>
+      </div>
 
-        <div class="mod-card-modern">
-          <h3>Tg Stacking Mod</h3>
-          <p>Gestion du stacking des ressources</p>
-        </div>
+      <!-- Grille des mods -->
+      <div class="mods-grid-modern"
+        style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;">
+        <!-- Chaque carte doit avoir .mod-card-modern (+ data-tags), un <h2> et un <p> pour le script -->
+        <article class="mod-card-modern" data-tags="qol, cryo, storage, management">
+          <img src="assets/images/mods/cryo.jpg" alt="" loading="lazy" />
+          <div class="content">
+            <h2>Pelayori's Cryo Storage</h2>
+            <p>Stockage de dinos cryogénisés et terminal cryo.</p>
+          </div>
+        </article>
 
-        <div class="mod-card-modern">
-          <h3>Simple Trade</h3>
-          <p>Système de monnaie et boutique</p>
-        </div>
+        <article class="mod-card-modern" data-tags="stacking, qol, resources">
+          <img src="assets/images/mods/stack.jpg" alt="" loading="lazy" />
+          <div class="content">
+            <h2>TG Stacking Mod</h2>
+            <p>Gestion du stacking des ressources.</p>
+          </div>
+        </article>
 
-        <div class="mod-card-modern">
-          <h3>Arkitect Structures Remastered</h3>
-          <p>Structures personnalisées avancées</p>
-        </div>
+        <article class="mod-card-modern" data-tags="economy, shop, currency">
+          <img src="assets/images/mods/trade.jpg" alt="" loading="lazy" />
+          <div class="content">
+            <h2>Simple Trade</h2>
+            <p>Système de monnaie et boutique.</p>
+          </div>
+        </article>
 
-        <div class="mod-card-modern">
-          <h3>Awesome Spyglass!</h3>
-          <p>Longue-vue améliorée</p>
-        </div>
+        <article class="mod-card-modern" data-tags="structures, building, qol">
+          <img src="assets/images/mods/structures.jpg" alt="" loading="lazy" />
+          <div class="content">
+            <h2>Arkitect Structures Remastered</h2>
+            <p>Structures personnalisées avancées.</p>
+          </div>
+        </article>
 
-        <div class="mod-card-modern">
-          <h3>BigAls: Wak Spinosauraurus</h3>
-          <p>Un dinosaure unique avec des capacités spéciales</p>
-        </div>
+        <article class="mod-card-modern" data-tags="ui, spyglass, qol">
+          <img src="assets/images/mods/spyglass.jpg" alt="" loading="lazy" />
+          <div class="content">
+            <h2>Awesome Spyglass!</h2>
+            <p>Informations claires sur les créatures en un coup d’œil.</p>
+          </div>
+        </article>
+
+        <article class="mod-card-modern" data-tags="creatures, dino">
+          <img src="assets/images/mods/spino.jpg" alt="" loading="lazy" />
+          <div class="content">
+            <h2>BigAl's: Wak Spinosaurus</h2>
+            <p>Un dinosaure unique avec des capacités spéciales.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-block hero-cta reveal">
+      <h3 class="section-heading">Des suggestions de mods ?</h3>
+      <p>Proposez vos idées sur le <a href="https://discord.gg/cGeN57YMDD" class="discord-btn" target="_blank"
+          rel="noopener noreferrer">Discord</a> — on étudie régulièrement de nouvelles options.</p>
+      <div class="hero-actions">
+        <a href="index.html" class="cta ghost">Retour à l’accueil</a>
+        <a href="rules.html" class="cta outline rules-btn">Lire le règlement</a>
       </div>
     </section>
   </main>
 
-  <script src="script.js?v=20241018" defer></script>
-
   <footer>
-    <p>© 2025 Arktopia</p>
+    <p>© 2025 Arktopia — Serveur Ark: Survival Ascended</p>
   </footer>
+
+  <script src="script.js?v=20241018"></script>
 </body>
 
 </html>

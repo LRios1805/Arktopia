@@ -5,35 +5,45 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>À propos - Arktopia</title>
+  <meta name="description"
+    content="Apprends-en plus sur la philosophie d’Arktopia, son équipe et les valeurs qui rendent le serveur unique : survie, fun et entraide." />
+
+  <link rel="icon" href="assets/logo/favicon.png" />
   <link rel="stylesheet" href="styles.css?v=20241018" />
 
   <!-- ========== META DISCORD / SOCIAL PREVIEW ========== -->
-  <meta property="og:title" content="À propos du projet - Arktopia">
+  <meta property="og:title" content="À propos du projet - Arktopia" />
   <meta property="og:description"
-    content="Apprends-en plus sur la philosophie du serveur Arktopia, son équipe et les valeurs qui le rendent unique.">
-  <meta property="og:image" content="https://lrios1805.github.io/Arktopia/assets/images/bg-about.jpg">
-  <meta property="og:url" content="https://lrios1805.github.io/Arktopia/about.html">
-  <meta property="og:type" content="article">
-  <meta name="theme-color" content="#22d3ee">
+    content="Apprends-en plus sur la philosophie du serveur Arktopia, son équipe et les valeurs qui le rendent unique." />
+  <meta property="og:image" content="https://lrios1805.github.io/Arktopia/assets/images/bg-about.jpg" />
+  <meta property="og:url" content="https://lrios1805.github.io/Arktopia/about.html" />
+  <meta property="og:type" content="article" />
+  <meta name="theme-color" content="#22d3ee" />
   <!-- ==================================================== -->
-
 </head>
 
 <body class="page-about">
+  <!-- Lien d'évitement -->
+  <a href="#contenu" class="skip-link"
+    style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
+    Aller au contenu
+  </a>
+
   <header>
-    <nav>
+    <nav role="navigation" aria-label="Navigation principale">
       <div class="logo">
-        <img src="assets/logo/Arktopia_logo_sans_fond.png" alt="Logo Arktopia">
+        <img src="assets/logo/Arktopia_logo_sans_fond.png" alt="Logo Arktopia" />
         <span>Arktopia</span>
       </div>
 
       <!-- Bouton burger -->
-      <button class="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-menu">☰</button>
+      <button class="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-menu"
+        aria-haspopup="true">☰</button>
 
-      <!-- Donne un id à la liste -->
+      <!-- Menu principal -->
       <ul class="menu" id="main-menu">
         <li><a href="index.html">Accueil</a></li>
-        <li><a href="about.html" class="active">À propos</a></li>
+        <li><a href="about.html" aria-current="page">À propos</a></li>
         <li><a href="rules.html">Règles</a></li>
         <li><a href="mods.html">Mods</a></li>
         <li><a href="join.html">Rejoindre</a></li>
@@ -42,47 +52,63 @@
     </nav>
   </header>
 
+  <!-- Hero -->
   <section class="hero">
-    <h1>À propos d’Arktopia</h1>
-    <p>Un serveur Ark: Survival Ascended francophone — axé survie, fun et entraide.</p>
+    <div class="hero-inner">
+      <span class="hero-eyebrow reveal">Notre philosophie</span>
+      <h1 class="reveal delay-1">À propos d’<span class="highlight">Arktopia</span></h1>
+      <p class="reveal delay-2">Un serveur Ark: Survival Ascended francophone — axé survie, fun et entraide.</p>
+      <div class="hero-actions reveal delay-3">
+        <a href="join.html" class="cta primary join-btn">Rejoindre</a>
+        <a href="rules.html" class="cta ghost rules-btn">Lire les règles</a>
+      </div>
+    </div>
   </section>
 
-  <main>
-    <section>
-      <h2>Notre vision</h2>
+  <!-- Contenu -->
+  <main id="contenu" tabindex="-1">
+    <section class="section-block reveal">
+      <h2 class="section-heading">Notre vision</h2>
       <p>
-        Arktopia est un serveur dédié à Ark: Survival Ascended, créé pour offrir une expérience
+        Arktopia est un serveur dédié à <em>Ark: Survival Ascended</em>, créé pour offrir une expérience
         unique aux joueurs francophones. Nous cherchons l’équilibre entre survie, construction
         et exploration, avec des règles justes et une communauté accueillante.
       </p>
+      <blockquote class="quote-card">“Construire ensemble, jouer fair-play, s’entraider — c’est l’ADN d’Arktopia.”
+      </blockquote>
     </section>
 
-    <section>
-      <h2>Nos paramètres de jeu</h2>
-      <ul>
-        <li>Poids : illimité</li>
-        <li>Artisanat : x1000</li>
-        <li>Durée d’incubation des œufs : x200</li>
-        <li>Temps de maturation des bébés : x100</li>
-        <li>Drop / loots améliorés</li>
-        <li>Pas de wipe prévu</li>
-        <li>Pas de pay-to-win</li>
-        <li>Discord requis</li>
+    <section class="section-block glass reveal">
+      <h2 class="section-heading">Nos paramètres de jeu</h2>
+      <ul class="feature-list">
+        <li>📦 <strong>Poids</strong> : illimité</li>
+        <li>🛠️ <strong>Artisanat</strong> : x1000</li>
+        <li>🥚 <strong>Incubation des œufs</strong> : x200</li>
+        <li>🍼 <strong>Maturation des bébés</strong> : x100</li>
+        <li>💎 <strong>Butins</strong> : améliorés</li>
+        <li>♻️ <strong>Wipe</strong> : aucun prévu</li>
+        <li>🚫 <strong>Pay-to-win</strong> : absent</li>
+        <li>💬 <strong>Discord</strong> : requis</li>
       </ul>
     </section>
 
-    <section>
-      <h2>Rejoignez-nous !</h2>
+    <section class="section-block reveal">
+      <h2 class="section-heading">Rejoignez-nous !</h2>
       <p>
         Prêt à tenter l’aventure sur Arktopia ? Consultez la page
         <a href="join.html" class="join-btn">Rejoindre</a> pour les étapes d’inscription et les mods à
         installer. Nous avons hâte de vous accueillir parmi nous !
       </p>
+      <div class="hero-actions">
+        <a href="mods.html" class="cta outline mods-btn">Voir les mods</a>
+        <a href="https://discord.gg/cGeN57YMDD" class="cta ghost discord-btn" target="_blank"
+          rel="noopener noreferrer">Rejoindre le Discord</a>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 Arktopia</p>
+    <p>© 2025 Arktopia — Serveur Ark: Survival Ascended</p>
   </footer>
 
   <script src="script.js?v=20241018"></script>
