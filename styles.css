@@ -144,7 +144,7 @@ nav {
 .faq-btn {
     display: inline-flex;
     background: rgba(34, 211, 238, 0.08);
-    color: rgb(179, 245, 25);
+    color: rgb(250, 59, 59);
     font-weight: 600;
     padding: 1px 5px;
     border-radius: 4px;
@@ -166,7 +166,7 @@ nav {
 .discord-btn {
     display: inline;
     background: rgba(34, 211, 238, 0.08);
-    color: rgb(179, 245, 25);
+    color: rgb(111, 197, 247);
     font-weight: 600;
     padding: 1px 5px;
     border-radius: 4px;
@@ -189,7 +189,7 @@ nav {
 .rules-btn {
     display: inline;
     background: rgba(34, 211, 238, 0.08);
-    color: rgb(179, 245, 25);
+    color: rgb(252, 236, 10);
     font-weight: 600;
     padding: 1px 5px;
     border-radius: 4px;
@@ -210,7 +210,7 @@ nav {
 .join-btn {
     display: inline;
     background: rgba(34, 211, 238, 0.08);
-    color: rgb(179, 245, 25);
+    color: rgb(30, 252, 159);
     font-weight: 600;
     padding: 1px 5px;
     border-radius: 4px;
@@ -252,7 +252,7 @@ nav {
 .mods-btn {
     display: inline;
     background: rgba(34, 211, 238, 0.08);
-    color: rgb(179, 245, 25);
+    color: rgb(255, 39, 244);
     font-weight: 600;
     padding: 1px 5px;
     border-radius: 4px;
