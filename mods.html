@@ -15,7 +15,7 @@
   <meta property="og:title" content="Mods utilisés - Arktopia" />
   <meta property="og:description"
     content="Découvre tous les mods installés sur le serveur Arktopia : confort, performance et immersion garantis." />
-  <meta property="og:image" content="https://lrios1805.github.io/Arktopia/assets/images/bg-mods.jpg" />
+  <meta property="og:image" content="https://lrios1805.github.io/Arktopia/assets/logo/bg-mods.jpg" />
   <meta property="og:url" content="https://lrios1805.github.io/Arktopia/mods.html" />
   <meta property="og:type" content="article" />
   <meta name="theme-color" content="#22d3ee" />
@@ -24,8 +24,7 @@
 
 <body class="page-mods">
   <!-- Lien d'évitement -->
-  <a class="skip-link" href="#contenu"
-    style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Aller au contenu</a>
+  <a class="skip-link visually-hidden" href="#contenu">Aller au contenu</a>
 
   <header>
     <nav role="navigation" aria-label="Navigation principale">
@@ -71,12 +70,11 @@
 
       <!-- Barre de recherche / filtre (hookée par script.js) -->
       <div class="section-block glass" style="display:grid;gap:12px; margin-bottom:18px;">
-        <label for="mods-search" class="visually-hidden" style="position:absolute;left:-9999px;">Rechercher un
-          mod</label>
+        <label for="mods-search" class="visually-hidden">Rechercher un mod</label>
         <input id="mods-search" type="search" placeholder="Rechercher un mod (nom, description, tag)…"
           style="padding:10px 14px;border-radius:12px;border:1px solid var(--border);background:rgba(255,255,255,0.04);color:var(--text);" />
-        <label for="mods-filter" class="visually-hidden" style="position:absolute;left:-9999px;">Filtrer par
-          catégorie</label>
+
+        <label for="mods-filter" class="visually-hidden">Filtrer par catégorie</label>
         <select id="mods-filter"
           style="padding:10px 14px;border-radius:12px;border:1px solid var(--border);background:rgba(255,255,255,0.04);color:var(--text);">
           <option value="">Toutes les catégories</option>
@@ -90,11 +88,10 @@
       </div>
 
       <!-- Grille des mods -->
-      <div class="mods-grid-modern"
-        style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;">
+      <div class="mods-grid-modern">
         <!-- Chaque carte doit avoir .mod-card-modern (+ data-tags), un <h2> et un <p> pour le script -->
         <article class="mod-card-modern" data-tags="qol, cryo, storage, management">
-          <img src="assets/images_mods/pelayoris_cryo_storage.png" alt="" loading="lazy" />
+          <img src="assets/images_mods/pelayoris_cryo_storage.png" alt="Pelayori's Cryo Storage" loading="lazy" />
           <div class="content">
             <h2>Pelayori's Cryo Storage</h2>
             <p>Stockage de dinos cryogénisés et terminal cryo.</p>
@@ -102,7 +99,7 @@
         </article>
 
         <article class="mod-card-modern" data-tags="stacking, qol, resources">
-          <img src="assets/images_mods/tg_stacking_mod.png" alt="" loading="lazy" />
+          <img src="assets/images_mods/tg_stacking_mod.png" alt="TG Stacking Mod" loading="lazy" />
           <div class="content">
             <h2>TG Stacking Mod</h2>
             <p>Gestion du stacking des ressources.</p>
@@ -110,7 +107,7 @@
         </article>
 
         <article class="mod-card-modern" data-tags="economy, shop, currency">
-          <img src="assets/images_mods/simple_trade.png" alt="" loading="lazy" />
+          <img src="assets/images_mods/simple_trade.jpg" alt="Simple Trade" loading="lazy" />
           <div class="content">
             <h2>Simple Trade</h2>
             <p>Système de monnaie et boutique.</p>
@@ -118,7 +115,7 @@
         </article>
 
         <article class="mod-card-modern" data-tags="structures, building, qol">
-          <img src="assets/images_mods/arkitec.png" alt="" loading="lazy" />
+          <img src="assets/images_mods/arkitec.png" alt="Arkitect Structures Remastered" loading="lazy" />
           <div class="content">
             <h2>Arkitect Structures Remastered</h2>
             <p>Structures personnalisées avancées.</p>
@@ -126,7 +123,7 @@
         </article>
 
         <article class="mod-card-modern" data-tags="ui, spyglass, qol">
-          <img src="assets/images_mods/awesome_spyglass.jpg" alt="" loading="lazy" />
+          <img src="assets/images_mods/awesome_spyglass.jpg" alt="Awesome Spyglass!" loading="lazy" />
           <div class="content">
             <h2>Awesome Spyglass!</h2>
             <p>Informations claires sur les créatures en un coup d’œil.</p>
@@ -134,16 +131,15 @@
         </article>
 
         <article class="mod-card-modern" data-tags="creatures, dino">
-          <img src="assets/images_mods/wak_spino.png" alt="" loading="lazy" />
+          <img src="assets/images_mods/wak_spino.png" alt="BigAl's: Wak Spinosaurus" loading="lazy" />
           <div class="content">
             <h2>BigAl's: Wak Spinosaurus</h2>
             <p>Un dinosaure unique avec des capacités spéciales.</p>
           </div>
         </article>
 
-        <!-- (déplacés dans la grille) -->
         <article class="mod-card-modern" data-tags="creatures, hybrid, dino">
-          <img src="assets/images_mods/moros_indomitable.png" alt="" loading="lazy" />
+          <img src="assets/images_mods/moros_indomitable.png" alt="Moro's Indomitable" loading="lazy" />
           <div class="content">
             <h2>Moro's Indomitable</h2>
             <p>Dinosaure hybride puissant et résistant.</p>
@@ -151,7 +147,7 @@
         </article>
 
         <article class="mod-card-modern" data-tags="creatures, variants, dino">
-          <img src="assets/images_mods/shiny_dinos.png" alt="" loading="lazy" />
+          <img src="assets/images_mods/shiny_dinos.png" alt="Shiny Dinos" loading="lazy" />
           <div class="content">
             <h2>Shiny Dinos</h2>
             <p>Variantes brillantes et colorées de dinosaures existants.</p>
@@ -159,7 +155,7 @@
         </article>
 
         <article class="mod-card-modern" data-tags="qol, farming, solo">
-          <img src="assets/images_mods/solo_farm_mod.jpeg" alt="" loading="lazy" />
+          <img src="assets/images_mods/solo_farm_mod.jpeg" alt="Solo Farm Mod" loading="lazy" />
           <div class="content">
             <h2>Solo Farm Mod</h2>
             <p>Permet de farmer plus efficacement en solo.</p>
@@ -183,7 +179,7 @@
     <p>© 2025 Arktopia — Serveur Ark: Survival Ascended</p>
   </footer>
 
-  <script src="script.js?v=20241018"></script>
+  <script src="script.js?v=20241018" defer></script>
 </body>
 
 </html>
