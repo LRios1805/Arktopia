@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Règlement - Arktopia</title>
-  <meta name="description"
-    content="Respect, entraide et bonne ambiance — découvre les règles d’Arktopia pour une aventure équilibrée et fun sur Ark: Survival Ascended." />
+  <meta name="description" content="Respect, entraide et bonne ambiance — découvre les règles d’Arktopia pour une aventure équilibrée et fun sur Ark: Survival Ascended." />
 
-  <link rel="stylesheet" href="styles.css?v=20241018" />
+  <link rel="icon" href="assets/logo/favicon.png" />
+  <!-- utilise la dernière version de ton CSS -->
+  <link rel="stylesheet" href="styles.css?v=20241030" />
 
   <!-- ========== META DISCORD / SOCIAL PREVIEW ========== -->
   <meta property="og:title" content="Règlement du serveur - Arktopia" />
-  <meta property="og:description"
-    content="Respect, entraide et bonne ambiance — découvre les règles d’Arktopia pour une aventure équilibrée et fun sur Ark: Survival Ascended." />
+  <meta property="og:description" content="Respect, entraide et bonne ambiance — découvre les règles d’Arktopia pour une aventure équilibrée et fun sur Ark: Survival Ascended." />
+  <!-- Laisse cette image si elle existe ; sinon change le chemin pour correspondre à ton CSS -->
   <meta property="og:image" content="https://lrios1805.github.io/Arktopia/assets/images/bg-rules.jpg" />
   <meta property="og:url" content="https://lrios1805.github.io/Arktopia/rules.html" />
   <meta property="og:type" content="article" />
@@ -23,27 +23,24 @@
 
 <body class="page-rules">
   <!-- Lien d'évitement -->
-  <a href="#contenu" class="skip-link"
-    style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
-    Aller au contenu
-  </a>
+  <a href="#contenu" class="visually-hidden">Aller au contenu</a>
 
   <!-- Header -->
   <header>
-    <nav aria-label="Navigation principale">
+    <nav role="navigation" aria-label="Navigation principale">
       <div class="logo">
         <img src="assets/logo/Arktopia_logo_sans_fond.png" alt="Logo Arktopia" />
         <span>Arktopia</span>
       </div>
 
       <!-- Bouton burger -->
-      <button class="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-menu">☰</button>
+      <button class="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-menu" aria-haspopup="true">☰</button>
 
       <!-- Menu principal -->
       <ul class="menu" id="main-menu">
         <li><a href="index.html">Accueil</a></li>
         <li><a href="about.html">À propos</a></li>
-        <li><a href="rules.html">Règles</a></li>
+        <li><a href="rules.html" class="active">Règles</a></li>
         <li><a href="mods.html">Mods</a></li>
         <li><a href="shop.html">Boutique</a></li>
         <li><a href="join.html">Rejoindre</a></li>
@@ -55,8 +52,13 @@
   <!-- Hero -->
   <section class="hero">
     <div class="hero-inner">
-      <h1>Règlement</h1>
-      <p>Merci de lire attentivement les règles du serveur Discord et du jeu.</p>
+      <span class="hero-eyebrow reveal">Respect • Entraide • Bonne ambiance</span>
+      <h1 class="reveal delay-1">Règlement d’<span class="highlight">Arktopia</span></h1>
+      <p class="reveal delay-2">Découvrez les règles essentielles pour une aventure équilibrée et fun sur notre serveur Ark: Survival Ascended.</p>
+      <div class="hero-actions reveal delay-3">
+        <a href="#contenu" class="cta rules-btn">Voir le règlement</a>
+        <a href="join.html" class="cta join-btn">Rejoindre le serveur</a>
+      </div>
     </div>
   </section>
 
@@ -138,7 +140,6 @@
     <p>© 2025 Arktopia — Serveur Ark: Survival Ascended</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=20241030" defer></script>
 </body>
-
 </html>
